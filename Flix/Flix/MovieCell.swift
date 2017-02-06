@@ -8,6 +8,17 @@
 
 import UIKit
 
-class MovieCell: UICollectionViewCell {
+class MovieCell: UICollectionViewCell
+{
+    @IBOutlet var movieLabel: UILabel!
+    @IBOutlet var movieCover: UIImageView!
     
+    var movieGenre : String = ""
+    var movieDescription : String = ""
+    var rateGiven : Double = 0.0
+    
+    override func awakeFromNib()
+    {
+        super.awakeFromNib()
+    }
 }

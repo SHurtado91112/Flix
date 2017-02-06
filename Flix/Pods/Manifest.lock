@@ -1,0 +1,35 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - CircularSpinner (1.2.0)
+  - FloatRatingView (2.0)
+  - MBProgressHUD (1.0.0)
+
+DEPENDENCIES:
+  - AFNetworking
+  - CircularSpinner
+  - FloatRatingView (~> 2.0.0)
+  - MBProgressHUD
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  CircularSpinner: 80b8ee3eda59b66d20631d4ca7c7c83720931739
+  FloatRatingView: 857ab8f10040d06a42fc979f486c8f9fecd2f2e5
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+
+PODFILE CHECKSUM: add32b0e47f7d3bce9d5d7819e8bbc2625458706
+
+COCOAPODS: 1.1.1
