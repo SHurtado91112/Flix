@@ -30,8 +30,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
      
         self.collectionView.delegate = self
         
-        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard(_:))))
+        let dismissGes = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard(_:)))
+        dismissGes.cancelsTouchesInView = false
         
+        self.view.addGestureRecognizer(dismissGes)
         self.navigationController?.navigationBar.titleTextAttributes =
             [NSForegroundColorAttributeName: UIColor.white,
              NSFontAttributeName: UIFont(name: "Arial Rounded MT Bold", size: 24)!]
@@ -100,11 +102,18 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                         {
                             if(i < genreArr.count-1)
                             {
-                                cell.movieGenre += "\(self.keyValGenre[genreArr[i]]!), "
+                                
+                                if(self.keyValGenre[genreArr[i]] != nil)
+                                {
+                                    cell.movieGenre += "\(self.keyValGenre[genreArr[i]]!), "
+                                }
                             }
                             else
                             {
-                                cell.movieGenre += "\(self.keyValGenre[genreArr[i]]!)"
+                                if(self.keyValGenre[genreArr[i]] != nil)
+                                {
+                                    cell.movieGenre += "\(self.keyValGenre[genreArr[i]]!)"
+                                }
                             }
                             
                         }

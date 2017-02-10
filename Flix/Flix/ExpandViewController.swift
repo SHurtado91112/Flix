@@ -9,13 +9,18 @@
 import UIKit
 import FloatRatingView
 
-class ExpandViewController: UIViewController {
+class ExpandViewController: UIViewController
+{
 
     @IBOutlet var expandCover: UIImageView!
     var coverImage: UIImage = UIImage()
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     @IBOutlet var movieLabel: UILabel!
     var movieTitle: String = String()
+    
+    @IBOutlet weak var infoView: UIView!
     
     @IBOutlet var rater: FloatRatingView!
     var rating: Double = 0.0
@@ -26,10 +31,26 @@ class ExpandViewController: UIViewController {
     @IBOutlet var descriptionView: UITextView!
     var descriptionText: String = String()
     
+    @IBOutlet weak var trailerBtn: UIButton!
+    
+    @IBOutlet weak var calendarImgView: UIImageView!
+    @IBOutlet weak var dateLabel: UILabel!
+    
+    @IBOutlet weak var watchImgView: UIImageView!
+    @IBOutlet weak var timeLabel: UILabel!
+    
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
 
+        calendarImgView.image = UIImage(named: "Calendar Filled-50")?.withRenderingMode(.alwaysTemplate)
+        watchImgView.image = UIImage(named: "Watch Filled-50")?.withRenderingMode(.alwaysTemplate)
+        
+        expandCover.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        
+        scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: infoView.frame.origin.y + infoView.frame.height)
+        
         rater.emptyImage = UIImage(named: "Rating-50")?.withRenderingMode(.alwaysTemplate)
         rater.fullImage = UIImage(named: "Rating Filled-50")?.withRenderingMode(.alwaysTemplate)
         rater.tintColor =  UIColor(red: 0.0/255.0,

@@ -20,5 +20,10 @@ class MovieCell: UICollectionViewCell
     override func awakeFromNib()
     {
         super.awakeFromNib()
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOpacity = 0.7
+        self.layer.shadowOffset = CGSize(width: 0.0, height: 14.0)
+        self.layer.shadowRadius = 10
+        self.layer.shouldRasterize = true
     }
 }
