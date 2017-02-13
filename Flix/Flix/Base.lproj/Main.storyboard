@@ -324,13 +324,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NNc-7H-bCC">
-                                <rect key="frame" x="0.0" y="243" width="375" height="181"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NNc-7H-bCC">
+                                <rect key="frame" x="0.0" y="141" width="375" height="385"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="385" id="hKW-6U-8gW"/>
+                                    <constraint firstAttribute="width" constant="375" id="o3s-me-QDF"/>
+                                </constraints>
                             </webView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NNc-7H-bCC" firstAttribute="centerX" secondItem="rwl-Rs-5gz" secondAttribute="centerX" id="RIh-cv-YEz"/>
+                            <constraint firstItem="NNc-7H-bCC" firstAttribute="centerY" secondItem="rwl-Rs-5gz" secondAttribute="centerY" id="ZFn-Rv-brN"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="webView" destination="NNc-7H-bCC" id="vRm-7m-J4u"/>

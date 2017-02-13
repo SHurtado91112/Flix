@@ -17,6 +17,7 @@ class MovieCell: UICollectionViewCell
     var movieDescription : String = ""
     var rateGiven : Double = 0.0
     var movieID : Int = 0
+    var movieDate : String = ""
     
     override func awakeFromNib()
     {

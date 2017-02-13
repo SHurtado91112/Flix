@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CircularSpinner
 
-class embedWebViewController: UIViewController
+class embedWebViewController: UIViewController, UIWebViewDelegate
 {
 
     var embedURL : String = ""
@@ -18,10 +19,33 @@ class embedWebViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        CircularSpinner.trackBgColor = UIColor.black
+        CircularSpinner.trackPgColor = UIColor(red: 0.0/255.0,
+                                               green:  122.0/255.0,
+                                               blue: 255.0/255.0,
+                                               alpha: 1)
+        
+        CircularSpinner.show("Grabbing trailer...", animated: true, type: .indeterminate)
 
-        webView.loadHTMLString("<iframe width=\"560\" height=\"315\" src=\"\(embedURL)\" frameborder=\"0\" allowfullscreen></iframe>", baseURL: nil)
+        
+        webView?.delegate = self
+        webView.alpha = 0
+        webView.allowsInlineMediaPlayback = true
+        webView.loadHTMLString("<iframe width=\"\(webView.frame.width)\" height=\"\(webView.frame.height)\" src=\"\(embedURL)?&playsinline=1\" frameborder=\"0\" allowfullscreen></iframe>", baseURL: nil)
         // Do any additional setup after loading the view.
     }
+    
+    func webViewDidFinishLoad(_ webView: UIWebView)
+    {
+        UIView.animate(withDuration: 0.4, animations:
+            {
+                webView.alpha = 1
+                CircularSpinner.hide()
+        }, completion: nil)
+    }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

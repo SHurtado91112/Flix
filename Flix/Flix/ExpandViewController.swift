@@ -36,6 +36,7 @@ class ExpandViewController: UIViewController, UIScrollViewDelegate
     
     var movieID : Int = 0
     var movieTrailer : String = ""
+    var movieDate : String = ""
     
     @IBOutlet weak var trailerBtn: UIButton!
     
@@ -49,6 +50,14 @@ class ExpandViewController: UIViewController, UIScrollViewDelegate
         self.scrollView?.delegate = self
         
         calendarImgView.image = UIImage(named: "Calendar Filled-50")?.withRenderingMode(.alwaysTemplate)
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        
+        let dateObj = formatter.date(from: movieDate)
+        formatter.dateFormat = "MMM dd, yyyy"
+        
+        dateLabel.text = String(describing: formatter.string(from: dateObj!))
         
         expandCover.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         

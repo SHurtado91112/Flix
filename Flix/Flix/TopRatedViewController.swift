@@ -235,6 +235,7 @@ class TopRatedViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         let movie = filteredData![indexPath.row]
         let movieID = movie["id"] as! Int
+        let movieDate = movie["release_date"] as! String
         let title = movie["title"] as! String
         let descriptionText = movie["overview"] as! String
         let genreArr = movie["genre_ids"] as! [Int]
@@ -263,6 +264,7 @@ class TopRatedViewController: UIViewController, UICollectionViewDelegate, UIColl
                     cell.rateGiven = rate
                     cell.movieGenre = ""
                     cell.movieID = movieID
+                    cell.movieDate = movieDate
                     
                     if(genreArr.count > 0)
                     {
@@ -288,6 +290,8 @@ class TopRatedViewController: UIViewController, UICollectionViewDelegate, UIColl
                     cell.movieCover.image = image
                     cell.movieDescription = descriptionText
                     cell.rateGiven = rate
+                    cell.movieID = movieID
+                    cell.movieDate = movieDate
                     
                     cell.movieGenre = ""
                     
@@ -326,6 +330,7 @@ class TopRatedViewController: UIViewController, UICollectionViewDelegate, UIColl
         VC.descriptionText = cellInfo.movieDescription
         VC.rating = cellInfo.rateGiven
         VC.movieID = cellInfo.movieID
+        VC.movieDate = cellInfo.movieDate
         //        let pop = nav.popoverPresentationController
         //        pop?.delegate = self
         //        pop?.sourceView = cellInfo
