@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		283025DB1E4583D100E67094 /* ExpandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283025DA1E4583D100E67094 /* ExpandViewController.swift */; };
 		286D3D7C1E4955EE007F9A1C /* TopRatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286D3D7B1E4955EE007F9A1C /* TopRatedViewController.swift */; };
+		286D3DEB1E50F29C007F9A1C /* MovieTopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286D3DEA1E50F29C007F9A1C /* MovieTopCell.swift */; };
+		286D3DEF1E515F23007F9A1C /* embedWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286D3DEE1E515F23007F9A1C /* embedWebViewController.swift */; };
 		28B4F7691E400DE1005F8CB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B4F7681E400DE1005F8CB1 /* AppDelegate.swift */; };
 		28B4F76B1E400DE1005F8CB1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B4F76A1E400DE1005F8CB1 /* ViewController.swift */; };
 		28B4F76E1E400DE1005F8CB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28B4F76C1E400DE1005F8CB1 /* Main.storyboard */; };
@@ -21,6 +23,8 @@
 /* Begin PBXFileReference section */
 		283025DA1E4583D100E67094 /* ExpandViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandViewController.swift; sourceTree = "<group>"; };
 		286D3D7B1E4955EE007F9A1C /* TopRatedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopRatedViewController.swift; sourceTree = "<group>"; };
+		286D3DEA1E50F29C007F9A1C /* MovieTopCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieTopCell.swift; sourceTree = "<group>"; };
+		286D3DEE1E515F23007F9A1C /* embedWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = embedWebViewController.swift; sourceTree = "<group>"; };
 		28B4F7651E400DE1005F8CB1 /* Flix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28B4F7681E400DE1005F8CB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28B4F76A1E400DE1005F8CB1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +75,8 @@
 				28B4F76A1E400DE1005F8CB1 /* ViewController.swift */,
 				286D3D7B1E4955EE007F9A1C /* TopRatedViewController.swift */,
 				28B4F77A1E401461005F8CB1 /* MovieCell.swift */,
+				286D3DEA1E50F29C007F9A1C /* MovieTopCell.swift */,
+				286D3DEE1E515F23007F9A1C /* embedWebViewController.swift */,
 				283025DA1E4583D100E67094 /* ExpandViewController.swift */,
 				28B4F76C1E400DE1005F8CB1 /* Main.storyboard */,
 				28B4F76F1E400DE2005F8CB1 /* Assets.xcassets */,
@@ -222,7 +228,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				283025DB1E4583D100E67094 /* ExpandViewController.swift in Sources */,
+				286D3DEF1E515F23007F9A1C /* embedWebViewController.swift in Sources */,
 				28B4F76B1E400DE1005F8CB1 /* ViewController.swift in Sources */,
+				286D3DEB1E50F29C007F9A1C /* MovieTopCell.swift in Sources */,
 				28B4F7691E400DE1005F8CB1 /* AppDelegate.swift in Sources */,
 				28B4F77B1E401461005F8CB1 /* MovieCell.swift in Sources */,
 				286D3D7C1E4955EE007F9A1C /* TopRatedViewController.swift in Sources */,

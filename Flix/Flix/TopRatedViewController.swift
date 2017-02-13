@@ -231,9 +231,10 @@ class TopRatedViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Movie", for: indexPath) as! MovieCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieTop", for: indexPath) as! MovieTopCell
         
         let movie = filteredData![indexPath.row]
+        let movieID = movie["id"] as! Int
         let title = movie["title"] as! String
         let descriptionText = movie["overview"] as! String
         let genreArr = movie["genre_ids"] as! [Int]
@@ -261,6 +262,7 @@ class TopRatedViewController: UIViewController, UICollectionViewDelegate, UIColl
                     cell.movieDescription = descriptionText
                     cell.rateGiven = rate
                     cell.movieGenre = ""
+                    cell.movieID = movieID
                     
                     if(genreArr.count > 0)
                     {
@@ -316,14 +318,14 @@ class TopRatedViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         print("Cell for indexPath: \(indexPath.row)")
         
-        let cellInfo = collectionView.cellForItem(at: indexPath) as! MovieCell
+        let cellInfo = collectionView.cellForItem(at: indexPath) as! MovieTopCell
         
         VC.coverImage = cellInfo.movieCover.image!
         VC.movieTitle = cellInfo.movieLabel.text!
         VC.genreText = cellInfo.movieGenre
         VC.descriptionText = cellInfo.movieDescription
         VC.rating = cellInfo.rateGiven
-        
+        VC.movieID = cellInfo.movieID
         //        let pop = nav.popoverPresentationController
         //        pop?.delegate = self
         //        pop?.sourceView = cellInfo

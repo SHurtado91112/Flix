@@ -68,6 +68,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Movie", for: indexPath) as! MovieCell
         
         let movie = filteredData![indexPath.row]
+        let movieID = movie["id"] as! Int
         let title = movie["title"] as! String
         let descriptionText = movie["overview"] as! String
         let genreArr = movie["genre_ids"] as! [Int]
@@ -95,6 +96,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                     cell.movieDescription = descriptionText
                     cell.rateGiven = rate
                     cell.movieGenre = ""
+                    cell.movieID = movieID
                     
                     if(genreArr.count > 0)
                     {
@@ -269,7 +271,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             {
                 if let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary
                 {
-                    
+                    print(self.moviesDictionary)
                     self.moviesDictionary = dataDictionary["results"] as? [NSDictionary]
                     self.filteredData = self.moviesDictionary
                     self.collectionView.reloadData()
@@ -340,7 +342,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         VC.genreText = cellInfo.movieGenre
         VC.descriptionText = cellInfo.movieDescription
         VC.rating = cellInfo.rateGiven
-        
+        VC.movieID = cellInfo.movieID
 //        let pop = nav.popoverPresentationController
 //        pop?.delegate = self
 //        pop?.sourceView = cellInfo

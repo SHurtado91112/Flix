@@ -1,17 +1,20 @@
 //
-//  MovieCell.swift
+//  MovieTopCell.swift
 //  Flix
 //
-//  Created by Steven Hurtado on 1/30/17.
+//  Created by Steven Hurtado on 2/12/17.
 //  Copyright © 2017 Steven Hurtado. All rights reserved.
 //
 
 import UIKit
 
-class MovieCell: UICollectionViewCell
+class MovieTopCell: UICollectionViewCell
 {
-    @IBOutlet var movieLabel: UILabel!
-    @IBOutlet var movieCover: UIImageView!
+
+    
+    @IBOutlet weak var movieCover: UIImageView!
+    
+    @IBOutlet weak var movieLabel: UILabel!
     
     var movieGenre : String = ""
     var movieDescription : String = ""
@@ -23,8 +26,9 @@ class MovieCell: UICollectionViewCell
         super.awakeFromNib()
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOpacity = 0.6
-        self.layer.shadowOffset = CGSize(width: 0.0, height: 14.0)
+        self.layer.shadowOffset = CGSize(width: 0.0, height: 24.0)
         self.layer.shadowRadius = 10
         self.layer.shouldRasterize = true
     }
+
 }
