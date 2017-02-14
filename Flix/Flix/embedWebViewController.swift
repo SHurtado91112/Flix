@@ -32,7 +32,10 @@ class embedWebViewController: UIViewController, UIWebViewDelegate
         webView?.delegate = self
         webView.alpha = 0
         webView.allowsInlineMediaPlayback = true
-        webView.loadHTMLString("<iframe width=\"\(webView.frame.width)\" height=\"\(webView.frame.height)\" src=\"\(embedURL)?&playsinline=1\" frameborder=\"0\" allowfullscreen></iframe>", baseURL: nil)
+        
+        self.webView.loadRequest(URLRequest(url: URL(string: embedURL)!))
+        
+//        webView.loadHTMLString("<iframe width=\"\(webView.frame.width)\" height=\"\(webView.frame.height)\" src=\"\(embedURL)?&playsinline=1\" frameborder=\"0\" allowfullscreen></iframe>", baseURL: nil)
         // Do any additional setup after loading the view.
     }
     
